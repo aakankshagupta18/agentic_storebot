@@ -1,0 +1,13 @@
+agno>=2.1.0
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+python-dotenv>=1.0
+pandas>=2.2
+openpyxl>=3.1
+SQLAlchemy>=2.0
+psycopg[binary]>=3.2
+pymysql>=1.1
+networkx>=3.3
+neo4j>=5.23 ; platform_system!="Windows"  # optional; we default to NetworkX
+jinja2>=3.1
