@@ -1,0 +1,468 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "sales",
+        "table": "orders"
+      },
+      "id": "sales.orders"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Row ID"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Order ID"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Order Date"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Ship Date"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Ship Mode"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Customer ID"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Customer Name"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Segment"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Country/Region"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.City"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.State/Province"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Postal Code"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Region"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Product ID"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Category"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Sub-Category"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Product Name"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Sales"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Quantity"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Discount"
+    },
+    {
+      "type": "column",
+      "table": "sales.orders",
+      "id": "sales.orders.Profit"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "returns"
+      },
+      "id": "ref.returns"
+    },
+    {
+      "type": "column",
+      "table": "ref.returns",
+      "id": "ref.returns.Returned"
+    },
+    {
+      "type": "column",
+      "table": "ref.returns",
+      "id": "ref.returns.ID"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "regional_managers"
+      },
+      "id": "regional_managers"
+    },
+    {
+      "type": "column",
+      "table": "regional_managers",
+      "id": "regional_managers.Regional Manager"
+    },
+    {
+      "type": "column",
+      "table": "regional_managers",
+      "id": "regional_managers.Regions"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "state_managers"
+      },
+      "id": "state_managers"
+    },
+    {
+      "type": "column",
+      "table": "state_managers",
+      "id": "state_managers.State/Province"
+    },
+    {
+      "type": "column",
+      "table": "state_managers",
+      "id": "state_managers.Manager"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "segment_managers"
+      },
+      "id": "segment_managers"
+    },
+    {
+      "type": "column",
+      "table": "segment_managers",
+      "id": "segment_managers.Segment"
+    },
+    {
+      "type": "column",
+      "table": "segment_managers",
+      "id": "segment_managers.Manager"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "category_managers"
+      },
+      "id": "category_managers"
+    },
+    {
+      "type": "column",
+      "table": "category_managers",
+      "id": "category_managers.Category"
+    },
+    {
+      "type": "column",
+      "table": "category_managers",
+      "id": "category_managers.Manager"
+    },
+    {
+      "type": "table",
+      "location": {
+        "engine": "postgres",
+        "schema": "ref",
+        "table": "customer_succces_managers"
+      },
+      "id": "customer_succces_managers"
+    },
+    {
+      "type": "column",
+      "table": "customer_succces_managers",
+      "id": "customer_succces_managers.Regions"
+    },
+    {
+      "type": "column",
+      "table": "customer_succces_managers",
+      "id": "customer_succces_managers.Manager"
+    }
+  ],
+  "links": [
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Row ID"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Order ID"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Order Date"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Ship Date"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Ship Mode"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Customer ID"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Customer Name"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Segment"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Country/Region"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.City"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.State/Province"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Postal Code"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Region"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Product ID"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Category"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Sub-Category"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Product Name"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Sales"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Quantity"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Discount"
+    },
+    {
+      "type": "has_column",
+      "source": "sales.orders",
+      "target": "sales.orders.Profit"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "Order ID",
+          "ID"
+        ]
+      ],
+      "source": "sales.orders",
+      "target": "ref.returns"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "Region",
+          "Regions"
+        ]
+      ],
+      "source": "sales.orders",
+      "target": "regional_managers"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "State/Province",
+          "State/Province"
+        ]
+      ],
+      "source": "sales.orders",
+      "target": "state_managers"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "Segment",
+          "Segment"
+        ]
+      ],
+      "source": "sales.orders",
+      "target": "segment_managers"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "Category",
+          "Category"
+        ]
+      ],
+      "source": "sales.orders",
+      "target": "category_managers"
+    },
+    {
+      "type": "has_column",
+      "source": "ref.returns",
+      "target": "ref.returns.Returned"
+    },
+    {
+      "type": "has_column",
+      "source": "ref.returns",
+      "target": "ref.returns.ID"
+    },
+    {
+      "type": "join",
+      "on": [
+        [
+          "ID",
+          "Order ID"
+        ]
+      ],
+      "source": "ref.returns",
+      "target": "sales.orders"
+    },
+    {
+      "type": "has_column",
+      "source": "regional_managers",
+      "target": "regional_managers.Regional Manager"
+    },
+    {
+      "type": "has_column",
+      "source": "regional_managers",
+      "target": "regional_managers.Regions"
+    },
+    {
+      "type": "has_column",
+      "source": "state_managers",
+      "target": "state_managers.State/Province"
+    },
+    {
+      "type": "has_column",
+      "source": "state_managers",
+      "target": "state_managers.Manager"
+    },
+    {
+      "type": "has_column",
+      "source": "segment_managers",
+      "target": "segment_managers.Segment"
+    },
+    {
+      "type": "has_column",
+      "source": "segment_managers",
+      "target": "segment_managers.Manager"
+    },
+    {
+      "type": "has_column",
+      "source": "category_managers",
+      "target": "category_managers.Category"
+    },
+    {
+      "type": "has_column",
+      "source": "category_managers",
+      "target": "category_managers.Manager"
+    },
+    {
+      "type": "has_column",
+      "source": "customer_succces_managers",
+      "target": "customer_succces_managers.Regions"
+    },
+    {
+      "type": "has_column",
+      "source": "customer_succces_managers",
+      "target": "customer_succces_managers.Manager"
+    }
+  ]
+}

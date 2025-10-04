@@ -1,8 +1,10 @@
 from agno.agent import Agent
-from agno.models.ollama import Ollama
+#from agno.models.ollama import Ollama
+from agno.models.google import Gemini
 from sqlalchemy import create_engine, text
 from tools.emailer import send_mail
 from dotenv import load_dotenv
+from agents.json_utils import loads_relaxed
 import os, json
 
 load_dotenv()
@@ -18,7 +20,8 @@ Return JSON: {"to":"...", "subject":"...", "body":"..."} only.
 
 class HumanResourcesAgent:
     def __init__(self, model_id: str, host: str):
-        self.agent = Agent(model=Ollama(id=model_id, host=host), system_prompt=SYSTEM, markdown=False)
+        #self.agent = Agent(model=Ollama(id=model_id, host=host), system_message=SYSTEM, markdown=False)
+        self.agent = Agent(model=Gemini(id=model_id), system_message=SYSTEM, markdown=False)
 
     def _lookup_manager(self, region=None, state=None, segment=None, category=None):
         # naive examples; expand as needed
@@ -34,7 +37,7 @@ class HumanResourcesAgent:
     def draft_and_send(self, request_text: str, sender_email: str, region=None, state=None, segment=None, category=None, send=False, to_override=None):
         mgr = to_override or self._lookup_manager(region=region, state=state, segment=segment, category=category) or "manager@example.com"
         plan = self.agent.run(f"Asker: {sender_email}\nTarget: {mgr}\nRequest: {request_text}\nJSON only.").content
-        data = json.loads(plan)
+        data = loads_relaxed(plan)
         if send:
             send_mail(data["to"], data["subject"], data["body"])
             return f"Email sent to {data['to']}."

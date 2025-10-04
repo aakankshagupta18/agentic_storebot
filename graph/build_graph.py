@@ -1,4 +1,4 @@
-from graph.graph_store import GraphStore
+from graph_store import GraphStore
 
 # Build nodes for tables + columns and encode where each table lives
 # We deliberately do not encode PK/FK constraints—only "joinable by" hints.
@@ -9,30 +9,30 @@ TABLES = {
     "location": {"engine": "postgres", "schema": "sales", "table": "orders"},
     "columns": ["Row ID","Order ID","Order Date","Ship Date","Ship Mode","Customer ID","Customer Name",
                 "Segment","Country/Region","City","State/Province","Postal Code","Region",
-                "Product ID","Category","Sub-Category","Product Name"]
+                "Product ID","Category","Sub-Category","Product Name", "Sales", "Quantity", "Discount", "Profit"]
   },
   "ref.returns": {
     "location": {"engine": "postgres", "schema": "ref", "table": "returns"},
     "columns": ["Returned","ID"]
   },
   "regional_managers": {
-    "location": {"engine": "mysql", "schema": "synthetic_store", "table": "regional_managers"},
+    "location": {"engine": "postgres", "schema": "ref", "table": "regional_managers"},
     "columns": ["Regional Manager","Regions"]
   },
   "state_managers": {
-    "location": {"engine": "mysql", "schema": "synthetic_store", "table": "state_managers"},
+    "location": {"engine": "postgres", "schema": "ref", "table": "state_managers"},
     "columns": ["State/Province","Manager"]
   },
   "segment_managers": {
-    "location": {"engine": "mysql", "schema": "synthetic_store", "table": "segment_managers"},
+    "location": {"engine": "postgres", "schema": "ref", "table": "segment_managers"},
     "columns": ["Segment","Manager"]
   },
   "category_managers": {
-    "location": {"engine": "mysql", "schema": "synthetic_store", "table": "category_managers"},
+    "location": {"engine": "postgres", "schema": "ref", "table": "category_managers"},
     "columns": ["Category","Manager"]
   },
   "customer_succces_managers": {
-    "location": {"engine": "mysql", "schema": "synthetic_store", "table": "customer_succces_managers"},
+    "location": {"engine": "postgres", "schema": "ref", "table": "customer_succces_managers"},
     "columns": ["Regions","Manager"]
   },
 }

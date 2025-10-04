@@ -19,7 +19,11 @@ CREATE TABLE IF NOT EXISTS sales.orders (
   "Product ID" TEXT,
   "Category" TEXT,
   "Sub-Category" TEXT,
-  "Product Name" TEXT
+  "Product Name" TEXT,
+  "Sales"        NUMERIC,
+  "Quantity"     INTEGER,
+  "Discount"     NUMERIC,
+  "Profit"       NUMERIC
 );
 
 -- Returns
